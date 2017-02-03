@@ -7,11 +7,6 @@ struct node *create_list() {
   return head;
 }
 
-// not correct atm
-void free_list(struct node *head) {
-  free(head);
-}
-
 // Assumes the given list is not null
 void add_to_list(struct node *head, int value) {
   struct node *temp = head;

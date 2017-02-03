@@ -17,7 +17,7 @@ int main( int argc, char **argv )
     struct node *the_node = search_list(head, 6);
     printf("The search yields: %i\n", the_node->val);
     struct node *the_other_node = search_list(head, 8);
-    printf("The search yields: %i\n", the_other_node == NULL ? "null" : "not null");
+    printf("The search yields: %s\n", the_other_node == NULL ? "null" : "not null");
 
     // test delete head
     struct node *after_deleted = delete_from_list(head, 5);
