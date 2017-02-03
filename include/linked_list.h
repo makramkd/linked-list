@@ -17,7 +17,7 @@ void add_to_list(struct node *head, int value);
 struct node *search_list(struct node *head, int value);
 
 // delete
-struct node *delete_from_list(struct node *head, int value);
+void delete_from_list(struct node *head, int value);
 
 // max
 int max_of_list(struct node *head);

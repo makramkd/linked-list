@@ -28,34 +28,29 @@ struct node *search_list(struct node *head, int value) {
 }
 
 // Assuming that head is not null
-struct node *delete_from_list(struct node *head, int value) {
+void delete_from_list(struct node *head, int value) {
   struct node *temp = head;
   struct node *before_temp = NULL;
-  struct node *after_temp = temp->next;
   while (temp != NULL && temp->val != value) {
     before_temp = temp;
     temp = temp->next;
-    after_temp = temp == NULL ? NULL : temp->next;
   }
 
   if (temp == NULL) {
-    return NULL;
-  } else if (after_temp == NULL) {
+    return;
+  } else if (temp->next == NULL) {
     // last position in the list, just remove
     // and update previous reference to NULL (rather than garbage)
     before_temp->next = NULL;
     free(temp);
-    return NULL;
   } else if (before_temp == NULL) {
     // head node, just remove
     free(temp);
-    return after_temp;
   } else {
     // in the middle
     // update pointers and free node to delete
-    before_temp->next = after_temp;
+    before_temp->next = temp->next;
     free(temp);
-    return after_temp;
   }
 }
 
