@@ -1,2 +1,4 @@
 *.o
 linked-list
+.idea
+cmake-build-debug
